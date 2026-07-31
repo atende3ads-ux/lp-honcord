@@ -72,8 +72,11 @@
   /* Hero */
   .hero{position:relative;overflow:hidden;background:#FAF8F7;border-bottom:1px solid #E7E2DE}
   .ring{position:absolute;border:1px solid rgba(152,26,27,.12);border-radius:50%;pointer-events:none}
-  .hero-in{position:relative;z-index:1;padding-top:clamp(56px,7vw,96px);padding-bottom:clamp(56px,7vw,96px)}
-  .hero-txt{max-width:680px}
+  .hero-media{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top}
+  .hero-veil{position:absolute;inset:0;background:linear-gradient(90deg,#FAF8F7 0%,rgba(250,248,247,.94) 32%,rgba(250,248,247,.5) 50%,rgba(250,248,247,0) 68%)}
+  .hero-in{position:relative;z-index:1;display:flex;align-items:center;min-height:clamp(420px,52vh,560px);padding-top:clamp(48px,6vw,80px);padding-bottom:clamp(48px,6vw,80px)}
+  .hero-txt{max-width:600px}
+  @media(max-width:899px){.hero-media,.hero-veil{display:none}}
   .hero h1{margin:0 0 18px;font-size:clamp(30px,3.8vw,46px);line-height:1.12;letter-spacing:-.035em;text-wrap:pretty}
   .hero-sub{max-width:560px;margin:0 0 28px;color:#5E5856;font-size:clamp(15.5px,1.2vw,17px);line-height:1.65;text-wrap:pretty}
   .hero-ctas{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:14px}
@@ -169,6 +172,8 @@
 <section class="hero">
   <div class="ring" style="right:-140px;top:-160px;width:440px;height:440px"></div>
   <div class="ring" style="right:-40px;top:-80px;width:240px;height:240px"></div>
+  <img class="hero-media" src="assets/hero-doacao-de-sangue.jpg" alt="Doador de sangue tranquilo na poltrona de coleta do banco de sangue">
+  <div class="hero-veil"></div>
   <div class="wrap hero-in">
     <div class="hero-txt">
       <p class="kicker">Banco de sangue em Goiânia</p>
@@ -239,12 +244,12 @@
       <article class="card">
         <div class="icon-box"><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="8" y="11" width="32" height="26" rx="4"></rect><circle cx="18" cy="22" r="4"></circle><path d="M12 33c1-3.5 3.2-5 6-5s5 1.5 6 5M30 19h8M30 26h8"></path></svg></div>
         <h3>Documento</h3>
-        <p>Leve um documento oficial com foto.<br><span class="todo">[VALIDAR documentos aceitos.]</span></p>
+        <p>Leve um documento oficial com foto.</p>
       </article>
       <article class="card">
         <div class="icon-box"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M14 6v14a5 5 0 0 0 10 0V6M19 6v36M34 6c-4 3-5 8-5 14h5v22"></path></svg></div>
         <h3>Alimentação</h3>
-        <p>Não é necessário estar em jejum. Siga as orientações da equipe sobre alimentação antes da doação.<br><span class="todo">[VALIDAR orientação completa.]</span></p>
+        <p>Não é necessário estar em jejum. Siga as orientações da equipe sobre alimentação antes da doação.</p>
       </article>
       <article class="card">
         <div class="icon-box"><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="7" y="10" width="34" height="31" rx="4"></rect><path d="M7 19h34M16 5v8M32 5v8M18 28l4 4 8-8"></path></svg></div>
@@ -254,7 +259,7 @@
       <article class="card">
         <div class="icon-box"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 43S9 28.5 9 18a15 15 0 0 1 30 0c0 10.5-15 25-15 25Z"></path><circle cx="24" cy="18" r="5"></circle></svg></div>
         <h3>Localização</h3>
-        <p><span class="todo">[Endereço completo]</span><br><span class="todo">[Informações sobre estacionamento, ponto de referência e acesso.]</span></p>
+        <p>R. T-35, 1941 - St. Bueno, Goiânia - GO, 74223-230<br><span class="todo">[Informações sobre estacionamento, ponto de referência e acesso.]</span></p>
       </article>
     </div>
   </div>
@@ -278,8 +283,8 @@
       <div class="card" style="padding:clamp(22px,2.6vw,30px)">
         <!-- Nota do documento: "Lista a preencher após validação" -->
         <ul class="check-list">
-          <li>Ter entre <span class="todo">[idade mínima]</span> e <span class="todo">[idade máxima]</span>.</li>
-          <li>Pesar pelo menos <span class="todo">[peso mínimo]</span>.</li>
+          <li>Ter entre 16 e 69 anos.</li>
+          <li>Pesar pelo menos 50kg.</li>
           <li>Estar em boas condições de saúde.</li>
           <li>Apresentar documento oficial com foto.</li>
           <li>Respeitar o intervalo entre doações.</li>
@@ -393,8 +398,8 @@
       <div class="card" style="padding:clamp(22px,2.6vw,30px)">
         <div class="info-rows">
           <div class="info-row"><span>Horário de atendimento:</span><strong>Segunda a Sexta das 08 as 16:30h, sábado das 08 as 11:30h</strong></div>
-          <div class="info-row"><span>Telefone:</span><span class="todo">[número]</span></div>
-          <div class="info-row"><span>WhatsApp:</span><span class="todo">[número]</span></div>
+          <div class="info-row"><span>Telefone:</span><strong>(62) 3239-6600</strong></div>
+          <div class="info-row"><span>WhatsApp:</span><strong>(62) 3239-6600</strong></div>
           <div class="info-row"><span>Estacionamento:</span><span class="todo">[informar]</span></div>
         </div>
       </div>
@@ -493,8 +498,8 @@
 </footer>
 
 <script>
-  // TODO: substituir pelo número oficial de WhatsApp do Honcord (formato: 55 + DDD + número)
-  var WHATSAPP_NUMBER = "5562999999999";
+  // Número oficial do Honcord (wa.me usado em honcord.com.br)
+  var WHATSAPP_NUMBER = "556232396600";
   // COPY: Mensagem automática sugerida (documento, seção 12)
   var WA_MESSAGE = "Olá! Gostaria de verificar os horários disponíveis e os requisitos para doar sangue no Honcord.";
 

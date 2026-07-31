@@ -71,8 +71,11 @@
   /* Hero */
   .hero{position:relative;overflow:hidden;background:#FAF8F7;border-bottom:1px solid #E7E2DE}
   .ring{position:absolute;border:1px solid rgba(152,26,27,.12);border-radius:50%;pointer-events:none}
-  .hero-in{position:relative;z-index:1;padding-top:clamp(56px,7vw,96px);padding-bottom:clamp(56px,7vw,96px)}
-  .hero-txt{max-width:680px}
+  .hero-media{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%}
+  .hero-veil{position:absolute;inset:0;background:linear-gradient(90deg,#FAF8F7 0%,#FAF8F7 24%,rgba(250,248,247,.93) 40%,rgba(250,248,247,.55) 55%,rgba(250,248,247,0) 72%)}
+  .hero-in{position:relative;z-index:1;display:flex;align-items:center;min-height:clamp(420px,52vh,560px);padding-top:clamp(48px,6vw,80px);padding-bottom:clamp(48px,6vw,80px)}
+  .hero-txt{max-width:600px}
+  @media(max-width:899px){.hero-media,.hero-veil{display:none}}
   .hero h1{margin:0 0 18px;font-size:clamp(30px,3.6vw,44px);line-height:1.12;letter-spacing:-.035em;text-wrap:pretty}
   .hero-sub{max-width:560px;margin:0 0 28px;color:#5E5856;font-size:clamp(15.5px,1.2vw,17px);line-height:1.65;text-wrap:pretty}
   .hero-ctas{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:14px}
@@ -196,6 +199,8 @@
 <section class="hero">
   <div class="ring" style="right:-140px;top:-160px;width:440px;height:440px"></div>
   <div class="ring" style="right:-40px;top:-80px;width:240px;height:240px"></div>
+  <img class="hero-media" src="assets/hero-onco.jpg" alt="Pacientes oncológicas sorrindo em ambiente acolhedor">
+  <div class="hero-veil"></div>
   <div class="wrap hero-in">
     <div class="hero-txt">
       <p class="kicker">Oncologia clínica em Goiânia • Particular e convênios</p>
@@ -442,7 +447,7 @@
         <p class="lead" style="margin-bottom:26px">O Honcord integra profissionais, estrutura clínica e processos de atendimento para tornar a jornada mais clara para pacientes e familiares.</p>
         <div class="grid" data-reveal style="grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px">
           <div class="stat"><strong>Mais de 20 anos</strong><span>de atuação</span></div>
-          <div class="stat"><strong><span class="todo">[Número]</span></strong><span>especialistas</span></div>
+          <div class="stat"><strong>30</strong><span>especialistas</span></div>
           <div class="stat"><strong><span class="todo">[Número]</span></strong><span>pacientes atendidos</span></div>
           <div class="stat"><strong><span class="todo">[Número]</span></strong><span>convênios aceitos</span></div>
         </div>
@@ -588,8 +593,8 @@
 </footer>
 
 <script>
-  // TODO: substituir pelo número oficial de WhatsApp do Honcord (formato: 55 + DDD + número)
-  var WHATSAPP_NUMBER = "5562999999999";
+  // Número oficial do Honcord (wa.me usado em honcord.com.br)
+  var WHATSAPP_NUMBER = "556232396600";
   var WA_MESSAGES = {
     main: "Olá! Vim pela página de oncologia do Honcord e gostaria de agendar uma consulta.",
     convenio: "Olá! Gostaria de verificar a cobertura do meu convênio para atendimento em oncologia no Honcord."

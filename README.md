@@ -23,9 +23,9 @@ Servida via GitHub Pages a partir da branch `main` (raiz do repositório). Qualq
 - Logos reais dos convênios na faixa de credibilidade.
 - Nota e volume reais das avaliações do Google.
 - Depoimentos reais (com autorização por escrito).
-- Nome, CRM do diretor técnico, CNES e razão social no rodapé/página, conforme necessidade.
-- Número de WhatsApp definitivo (propriedade `whatsappNumber` do template; nas LPs novas, a constante `WHATSAPP_NUMBER` no `<script>` de cada arquivo).
-- Nas LPs novas: dados marcados em âmbar (idade/peso mínimos, tempo de atendimento, telefone, estacionamento, números de especialistas/pacientes/convênios) e validação técnica/clínica dos textos indicados nos documentos.
+- Nome, CRM do diretor técnico, CNES e razão social no rodapé/página, conforme necessidade. (Site oficial informa: Diretor Técnico Médico Dr. Frederico Saddi Teixeira - CRM/GO 9045 | RQE 7614.)
+- Número de WhatsApp: LPs novas já usam o (62) 3239-6600, número oficial do wa.me em honcord.com.br — confirmar se é o canal desejado para campanhas. No `index.html`, a propriedade `whatsappNumber` segue com placeholder.
+- Nas LPs novas, dados preenchidos a partir de honcord.com.br: idade 16-69, peso mínimo 50kg, telefone/WhatsApp, endereço do banco de sangue e 30 especialistas. Seguem em âmbar: tempo de atendimento da doação, estacionamento, nº de pacientes atendidos, nº de convênios aceitos e as validações técnicas/clínicas de texto indicadas nos documentos.
 - Integração dos formulários (hematologia e oncologia) com o destino real dos leads — hoje o envio só exibe a confirmação na tela.
 - Fotos de hero conforme direção de imagem dos documentos (doador acolhido; consulta hematologista + paciente; médico com paciente e familiar).
 
