@@ -1,2 +1,4 @@
 .DS_Store
 .claude/
+# Documentos internos de copy — não publicar no GitHub Pages
+*.docx
