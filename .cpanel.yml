@@ -1,0 +1,13 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home2/hg3ads37/saude.honcord.com.br/
+    - /bin/mkdir -p ${DEPLOYPATH}assets
+    - /bin/cp index.html ${DEPLOYPATH}index.html
+    - /bin/cp assets/favicon-honcord.svg ${DEPLOYPATH}assets/favicon-honcord.svg
+    - /bin/cp assets/lp-enhancements.css ${DEPLOYPATH}assets/lp-enhancements.css
+    - /bin/cp assets/lp-enhancements.js ${DEPLOYPATH}assets/lp-enhancements.js
+    - /bin/cp assets/logo.png ${DEPLOYPATH}assets/logo.png
+    - /bin/cp assets/hero-doacao-de-sangue-v2.jpg ${DEPLOYPATH}assets/hero-doacao-de-sangue-v2.jpg
+    - /bin/cp assets/hero-doacao-de-sangue-960.webp ${DEPLOYPATH}assets/hero-doacao-de-sangue-960.webp
+    - /bin/cp assets/hero-doacao-de-sangue-1920.webp ${DEPLOYPATH}assets/hero-doacao-de-sangue-1920.webp
