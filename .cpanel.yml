@@ -2,6 +2,7 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home2/hg3ads37/saude.honcord.com.br/doacao-de-sangue/
+    - /bin/rm -f /home2/hg3ads37/saude.honcord.com.br/index.html
     - /bin/mkdir -p ${DEPLOYPATH}assets
     - /bin/cp index.html ${DEPLOYPATH}index.html
     - /bin/cp assets/favicon-honcord.svg ${DEPLOYPATH}assets/favicon-honcord.svg
