@@ -40,6 +40,17 @@
   .icon-box svg{width:22px;height:22px;fill:none;stroke:#981A1B;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
   .card h3{margin:0 0 6px;font-size:16.5px;line-height:1.3}
   .card p{margin:0;color:#5E5856;font-size:14.5px}
+  .detail-panel{margin-top:24px;padding:clamp(22px,3vw,30px);border:1px solid #E7E2DE;border-radius:14px;background:#fff}
+  .detail-panel h3{margin:0 0 8px;font-size:19px;line-height:1.3}
+  .detail-panel>p{margin:0 0 20px;color:#5E5856;font-size:14.5px}
+  .detail-list{display:grid;grid-template-columns:minmax(0,1fr);gap:10px 20px;margin:0;padding:0;list-style:none}
+  .detail-list li{position:relative;padding-left:17px;color:#4A4442;font-size:14px}
+  .detail-list li::before{content:"";position:absolute;left:0;top:.62em;width:6px;height:6px;border-radius:50%;background:#981A1B}
+  .procedure-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:12px}
+  .procedure-item{padding:16px;border:1px solid #E7E2DE;border-radius:10px;background:#FAF8F7}
+  .procedure-item strong{display:block;margin-bottom:3px;font-size:14px;line-height:1.35;color:#231F20}
+  .procedure-item span{display:block;color:#5E5856;font-size:13.5px;line-height:1.45}
+  @media(min-width:700px){.detail-list,.procedure-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 
   .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:13px 24px;border-radius:8px;font-size:14.5px;font-weight:700;cursor:pointer;border:0}
   .btn-primary{background:#981A1B;color:#fff}
@@ -112,6 +123,10 @@
   .quote figcaption{display:flex;align-items:center;gap:11px;font-size:13px;color:#5E5856}
   .quote .avatar{width:36px;height:36px;border-radius:50%;background:repeating-linear-gradient(135deg,#EFEBE7 0 8px,#F7F4F1 8px 16px)}
   .quote strong{display:block;color:#231F20}
+  .testimonial-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:16px}
+  .testimonial-grid .quote{display:flex;flex-direction:column;height:100%;padding:24px}
+  .testimonial-grid .quote blockquote{flex:1;font-size:16px}
+  @media(min-width:768px){.testimonial-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 
   /* Formulário */
   .form-card{padding:clamp(22px,2.6vw,30px);border:1px solid #E7E2DE;border-radius:14px;background:#fff;box-shadow:0 12px 34px rgba(35,31,32,.07)}
@@ -137,6 +152,7 @@
   .split{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:clamp(32px,5vw,64px);align-items:start}
   .photo-frame{position:relative;aspect-ratio:4/3;border-radius:14px;overflow:hidden;border:1px solid #E7E2DE;box-shadow:0 12px 34px rgba(35,31,32,.07)}
   .photo-frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  @media(max-width:359px){.split,.sec-head{grid-template-columns:minmax(0,1fr)}}
   @media(max-width:640px){.btn{width:100%}.hero-ctas .btn{width:100%}}
 </style>
 </head>
@@ -295,12 +311,12 @@
       <article class="card">
         <div class="icon-box"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M19 5h10M21 5v13L11 36a4 4 0 0 0 3.5 6h19a4 4 0 0 0 3.5-6L27 18V5"></path><path d="M16 31h16M20 25h8"></path></svg></div>
         <h3>Exames de diagnóstico</h3>
-        <p>Acesso a exames integrados ao acompanhamento clínico.<br><span class="todo">[VALIDAR quais exames são realizados.]</span></p>
+        <p>Acesso a exames e procedimentos integrados ao acompanhamento clínico. Consulte a relação disponível abaixo.</p>
       </article>
       <article class="card">
         <div class="icon-box"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 39S8 30 8 18.5C8 12.7 12.1 9 17 9c3.3 0 5.7 1.7 7 4 1.3-2.3 3.7-4 7-4 4.9 0 9 3.7 9 9.5C40 30 24 39 24 39Z"></path><path d="M15 23h6l2-5 3 10 2-5h5"></path></svg></div>
         <h3>Hemoterapia</h3>
-        <p>Procedimentos hemoterápicos realizados mediante indicação e avaliação médica.<br><span class="todo">[VALIDAR procedimentos oferecidos.]</span></p>
+        <p>Procedimentos hemoterápicos realizados mediante indicação e avaliação médica. Veja as opções oferecidas abaixo.</p>
       </article>
       <article class="card">
         <div class="icon-box"><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="18"></circle><path d="m15 24 6 6 12-13"></path></svg></div>
@@ -312,6 +328,38 @@
         <h3>Equipe multidisciplinar</h3>
         <p>Participação de outros profissionais quando necessário para o acompanhamento.</p>
       </article>
+    </div>
+    <div class="detail-panel" data-reveal>
+      <h3>Exames e procedimentos disponíveis no Honcord</h3>
+      <p>A indicação e a disponibilidade de cada exame ou procedimento dependem da avaliação profissional e da necessidade de cada paciente.</p>
+      <ul class="detail-list">
+        <li>Hemograma</li>
+        <li>Endoscopia</li>
+        <li>Colonoscopia</li>
+        <li>Elastografia</li>
+        <li>Ultrassonografia</li>
+        <li>Exames com Doppler</li>
+        <li>Cistoscopia</li>
+        <li>Vasectomia</li>
+        <li>Postectomia</li>
+        <li>Cirurgia micrográfica de Mohs</li>
+        <li>Exérese de tumores de pele</li>
+        <li>Linfadenectomia</li>
+        <li>Esvaziamento cervical radical</li>
+        <li>Punções medulares para mielograma, biópsias e exames relacionados</li>
+      </ul>
+    </div>
+    <div class="detail-panel" data-reveal>
+      <h3>Procedimentos hemoterápicos oferecidos</h3>
+      <p>Todos os procedimentos são realizados conforme indicação e avaliação médica.</p>
+      <div class="procedure-grid">
+        <div class="procedure-item"><strong>Transfusão de concentrado de hemácias</strong><span>Reposição de glóbulos vermelhos do sangue.</span></div>
+        <div class="procedure-item"><strong>Transfusão de concentrado de plaquetas</strong><span>Reposição de plaquetas.</span></div>
+        <div class="procedure-item"><strong>Transfusão de plasma fresco congelado</strong><span>Reposição de plasma.</span></div>
+        <div class="procedure-item"><strong>Transfusão de crioprecipitado</strong><span>Reposição de uma parte específica do plasma.</span></div>
+        <div class="procedure-item"><strong>Sangria terapêutica</strong><span>Retirada controlada de sangue para o tratamento indicado.</span></div>
+        <div class="procedure-item"><strong>Transfusão de troca</strong><span>Substituição controlada de parte do sangue por sangue compatível.</span></div>
+      </div>
     </div>
   </div>
 </section>
@@ -402,15 +450,38 @@
 <!-- COPY: Prova social -->
 <!-- Nota do documento: "Não publicar depoimentos fictícios." -->
 <section style="background:#F7F5F3;border-bottom:1px solid #E7E2DE">
-  <div class="wrap sec" style="max-width:880px">
+  <div class="wrap sec">
     <h2 class="h2" style="text-align:center;margin-bottom:36px">Clareza e acolhimento também fazem parte do atendimento.</h2>
-    <figure class="quote" data-reveal>
-      <blockquote>“Cheguei com muitas dúvidas sobre meus exames e saí da consulta entendendo o que precisava acompanhar.”</blockquote>
-      <figcaption>
-        <span class="avatar"></span>
-        <span><strong><span class="todo">[Nome ou iniciais autorizadas]</span></strong>Paciente do Honcord</span>
-      </figcaption>
-    </figure>
+    <div class="testimonial-grid" data-reveal>
+      <figure class="quote">
+        <blockquote>“Sempre fui muito bem atendida, sempre indico!”</blockquote>
+        <figcaption><span class="avatar" aria-hidden="true"></span><span><strong>N.A.</strong>Paciente de Hematologia Honcord</span></figcaption>
+      </figure>
+      <figure class="quote">
+        <blockquote>“Gostei muito da secretária Vivian. Ela é super gentil e educada. O Dr. Adriano é um médico excelente, eu indicaria a Honcord para todas as pessoas.”</blockquote>
+        <figcaption><span class="avatar" aria-hidden="true"></span><span><strong>M.L.</strong>Paciente de Hematologia Honcord</span></figcaption>
+      </figure>
+      <figure class="quote">
+        <blockquote>“Excelente atendimento desde a chegada até a finalização. Educação e atenção das recepcionistas, prontas para atender.”</blockquote>
+        <figcaption><span class="avatar" aria-hidden="true"></span><span><strong>J.</strong>Paciente de Hematologia Honcord</span></figcaption>
+      </figure>
+      <figure class="quote">
+        <blockquote>“Sou muito feliz e grata pelo privilégio de tratar neste lugar abençoado.”</blockquote>
+        <figcaption><span class="avatar" aria-hidden="true"></span><span><strong>A.R.</strong>Paciente de Hematologia Honcord</span></figcaption>
+      </figure>
+      <figure class="quote">
+        <blockquote>“Somos sempre muito gratos pelo atendimento prestado por todos nessa clínica! Verdadeira excelência em atendimento.”</blockquote>
+        <figcaption><span class="avatar" aria-hidden="true"></span><span><strong>H.C.</strong>Paciente de Hematologia Honcord</span></figcaption>
+      </figure>
+      <figure class="quote">
+        <blockquote>“Um lugar que cuida da saúde, vida e pessoas com excelência! Parabéns!”</blockquote>
+        <figcaption><span class="avatar" aria-hidden="true"></span><span><strong>G.F.</strong>Paciente de Hematologia Honcord</span></figcaption>
+      </figure>
+      <figure class="quote">
+        <blockquote>“Sempre fui bem atendido tanto nos consultórios quanto na quimioterapia.”</blockquote>
+        <figcaption><span class="avatar" aria-hidden="true"></span><span><strong>J.R.S.</strong>Paciente de Hematologia Honcord</span></figcaption>
+      </figure>
+    </div>
   </div>
 </section>
 
@@ -475,7 +546,7 @@
       </details>
       <details class="faq">
         <summary>O que é hemoterapia?</summary>
-        <p class="faq-a">Hemoterapia é a área relacionada ao uso terapêutico do sangue e de seus componentes. Os procedimentos dependem de indicação médica.<br><span class="todo">[Validar definição final com a direção clínica.]</span></p>
+        <p class="faq-a">Hemoterapia é a área relacionada ao uso terapêutico do sangue e de seus componentes. No Honcord, os procedimentos são realizados conforme indicação e avaliação médica.</p>
       </details>
       <details class="faq">
         <summary>Preciso de encaminhamento?</summary>
@@ -487,7 +558,7 @@
       </details>
       <details class="faq">
         <summary>O Honcord realiza exames?</summary>
-        <p class="faq-a">O Honcord possui serviços de diagnóstico integrados. A disponibilidade depende do exame solicitado.<br><span class="todo">[Inserir lista validada ou direcionar para atendimento.]</span></p>
+        <p class="faq-a">Sim. O Honcord realiza exames e procedimentos de diagnóstico integrados ao acompanhamento. A disponibilidade depende do exame solicitado, da indicação profissional e das condições do atendimento.</p>
       </details>
       <details class="faq">
         <summary>O convênio cobre hemoterapia?</summary>

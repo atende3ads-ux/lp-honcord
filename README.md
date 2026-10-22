@@ -20,12 +20,11 @@ Servida via GitHub Pages a partir da branch `main` (raiz do repositório). Qualq
 
 ## Pendências de conteúdo
 
-- Logos reais dos convênios na faixa de credibilidade.
-- Nota e volume reais das avaliações do Google.
-- Depoimentos reais (com autorização por escrito).
+- Os nomes dos 17 convênios foram inseridos na LP de Oncologia; os arquivos oficiais de logotipo ainda podem substituir os cards textuais quando forem disponibilizados.
+- Nota e volume reais das avaliações do Google. Esses números não são exibidos enquanto não houver confirmação.
 - Nome, CRM do diretor técnico, CNES e razão social no rodapé/página, conforme necessidade. (Site oficial informa: Diretor Técnico Médico Dr. Frederico Saddi Teixeira - CRM/GO 9045 | RQE 7614.)
 - Links de contato: todas as LPs usam o redirecionador SPAR `https://spar.3ads.com.br/l/atendimento-banco-de-san-j3tk`.
-- Nas LPs novas, dados preenchidos a partir de honcord.com.br: idade 16-69, peso mínimo 50kg, telefone/WhatsApp, endereço do banco de sangue e 30 especialistas. Seguem em âmbar: tempo de atendimento da doação, estacionamento, nº de pacientes atendidos, nº de convênios aceitos e as validações técnicas/clínicas de texto indicadas nos documentos.
+- Nas LPs novas, dados preenchidos a partir de honcord.com.br e das validações internas: idade 16-69, peso mínimo 50kg, telefone/WhatsApp, endereço do banco de sangue, 35 especialistas, mais de 30 mil pacientes atendidos e 17 convênios atendidos. Permanecem pendentes apenas os marcadores não contemplados pelas validações recebidas.
 - Integração dos formulários (hematologia e oncologia) com o destino real dos leads — hoje o envio só exibe a confirmação na tela.
 - Fotos de hero conforme direção de imagem dos documentos (doador acolhido; consulta hematologista + paciente; médico com paciente e familiar).
 
