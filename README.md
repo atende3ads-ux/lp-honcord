@@ -27,6 +27,7 @@ O endpoint `honcord-lead.php` valida os dados e encaminha ao Apps Script vincula
 
 - Os nomes dos 17 convênios foram inseridos na LP de Oncologia; os arquivos oficiais de logotipo ainda podem substituir os cards textuais quando forem disponibilizados.
 - Nota e volume reais das avaliações do Google. Esses números não são exibidos enquanto não houver confirmação.
+- Política institucional de participação de familiares na consulta: a FAQ de Oncologia orienta confirmar com a equipe enquanto não houver regra oficial validada.
 - Nome, CRM do diretor técnico, CNES e razão social no rodapé/página, conforme necessidade. (Site oficial informa: Diretor Técnico Médico Dr. Frederico Saddi Teixeira - CRM/GO 9045 | RQE 7614.)
 - Links de contato: Hematologia e Oncologia direcionam ao WhatsApp `https://api.whatsapp.com/send/?phone=556232396600`; Doação de Sangue continua no redirecionador SPAR.
 - Nas LPs novas, dados preenchidos a partir de honcord.com.br e das validações internas: idade 16-69, peso mínimo 50kg, telefone/WhatsApp, endereço do banco de sangue, 35 especialistas, mais de 30 mil pacientes atendidos e 17 convênios atendidos. Conferir periodicamente esses dados com a Honcord.
