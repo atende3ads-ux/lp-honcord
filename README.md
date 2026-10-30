@@ -19,7 +19,7 @@ As três LPs seguem a copy dos documentos `[HONCORD] LP ... - AGO26.docx`. Os po
 
 Servida via GitHub Pages a partir da branch `main` (raiz do repositório). Qualquer commit na `main` republica a página automaticamente.
 
-O deploy no cPanel mantém `/doacao-de-sangue/` e acrescenta `/hematologista/` e `/oncologia/` no subdomínio `saude.honcord.com.br`. A receita de `.cpanel.yml` copia somente os arquivos públicos necessários. O formulário nas páginas de GitHub Pages não envia dados; ele funciona apenas no domínio oficial.
+O deploy no cPanel mantém `/doacao-de-sangue/` e publica `/oncologia/` no subdomínio `saude.honcord.com.br`. A LP de Hematologia **não está no deploy**: o conteúdo ainda traz o marcador `[VALIDAÇÃO CLÍNICA OBRIGATÓRIA antes da publicação.]`. Após revisão clínica, remover o marcador e `noindex` e acrescentar a cópia da página e seus assets à `.cpanel.yml`. Os arquivos da primeira tentativa foram preservados fora do document root em `/home2/hg3ads37/honcord-hematologista-pendente-validacao-clinica` (permissão `0700`). O formulário nas páginas de GitHub Pages não envia dados; ele funciona apenas no domínio oficial.
 
 O endpoint `honcord-lead.php` valida os dados e encaminha ao Apps Script vinculado à planilha privada “Honcord - Leads Hematologia e Oncologia” de `atendimento.3ads@gmail.com`. O URL do web app fica exclusivamente em `/home2/hg3ads37/.config/honcord-leads.php`, fora da pasta pública e do Git, com permissão `0600`. O deploy exige esse arquivo antes de copiar as LPs. Nenhum formulário confirma recebimento sem resposta positiva do servidor. A planilha registra LP, nome, WhatsApp, convênio, motivo e parâmetros de campanha; os testes devem usar dados sintéticos identificados como `TESTE`.
 
@@ -30,7 +30,7 @@ O endpoint `honcord-lead.php` valida os dados e encaminha ao Apps Script vincula
 - Nome, CRM do diretor técnico, CNES e razão social no rodapé/página, conforme necessidade. (Site oficial informa: Diretor Técnico Médico Dr. Frederico Saddi Teixeira - CRM/GO 9045 | RQE 7614.)
 - Links de contato: Hematologia e Oncologia direcionam ao WhatsApp `https://api.whatsapp.com/send/?phone=556232396600`; Doação de Sangue continua no redirecionador SPAR.
 - Nas LPs novas, dados preenchidos a partir de honcord.com.br e das validações internas: idade 16-69, peso mínimo 50kg, telefone/WhatsApp, endereço do banco de sangue, 35 especialistas, mais de 30 mil pacientes atendidos e 17 convênios atendidos. Conferir periodicamente esses dados com a Honcord.
-- Validar o Apps Script, o endpoint PHP e os formulários no domínio oficial antes de anunciar a publicação.
+- A integração Apps Script → planilha e o formulário de Oncologia foram validados com dados sintéticos, removidos da planilha após o teste. Falta a validação clínica da LP de Hematologia antes de publicá-la.
 - Fotos de hero conforme direção de imagem dos documentos (doador acolhido; consulta hematologista + paciente; médico com paciente e familiar).
 
 Desenvolvido por 3ADS.
