@@ -1,6 +1,8 @@
 ---
 deployment:
   tasks:
+    - /bin/test -f /home2/hg3ads37/.config/honcord-leads.php
+    - /bin/cp honcord-lead.php /home2/hg3ads37/saude.honcord.com.br/honcord-lead.php
     - export DEPLOYPATH=/home2/hg3ads37/saude.honcord.com.br/doacao-de-sangue/
     - /bin/rm -f /home2/hg3ads37/saude.honcord.com.br/index.html
     - /bin/mkdir -p ${DEPLOYPATH}assets
@@ -12,3 +14,17 @@ deployment:
     - /bin/cp assets/hero-doacao-de-sangue-v2.jpg ${DEPLOYPATH}assets/hero-doacao-de-sangue-v2.jpg
     - /bin/cp assets/hero-doacao-de-sangue-960.webp ${DEPLOYPATH}assets/hero-doacao-de-sangue-960.webp
     - /bin/cp assets/hero-doacao-de-sangue-1920.webp ${DEPLOYPATH}assets/hero-doacao-de-sangue-1920.webp
+    - /bin/mkdir -p /home2/hg3ads37/saude.honcord.com.br/hematologista/assets
+    - /bin/cp hematologista-goiania.html /home2/hg3ads37/saude.honcord.com.br/hematologista/index.html
+    - /bin/cp assets/favicon-honcord.svg /home2/hg3ads37/saude.honcord.com.br/hematologista/assets/favicon-honcord.svg
+    - /bin/cp assets/logo.png /home2/hg3ads37/saude.honcord.com.br/hematologista/assets/logo.png
+    - /bin/cp assets/hero-hematologista.jpg /home2/hg3ads37/saude.honcord.com.br/hematologista/assets/hero-hematologista.jpg
+    - /bin/cp assets/sala-infusao.jpg /home2/hg3ads37/saude.honcord.com.br/hematologista/assets/sala-infusao.jpg
+    - /bin/cp assets/honcord-form.js /home2/hg3ads37/saude.honcord.com.br/hematologista/assets/honcord-form.js
+    - /bin/mkdir -p /home2/hg3ads37/saude.honcord.com.br/oncologia/assets
+    - /bin/cp oncologia-goiania.html /home2/hg3ads37/saude.honcord.com.br/oncologia/index.html
+    - /bin/cp assets/favicon-honcord.svg /home2/hg3ads37/saude.honcord.com.br/oncologia/assets/favicon-honcord.svg
+    - /bin/cp assets/logo.png /home2/hg3ads37/saude.honcord.com.br/oncologia/assets/logo.png
+    - /bin/cp assets/hero-onco-stock.jpg /home2/hg3ads37/saude.honcord.com.br/oncologia/assets/hero-onco-stock.jpg
+    - /bin/cp assets/sala-infusao.jpg /home2/hg3ads37/saude.honcord.com.br/oncologia/assets/sala-infusao.jpg
+    - /bin/cp assets/honcord-form.js /home2/hg3ads37/saude.honcord.com.br/oncologia/assets/honcord-form.js
