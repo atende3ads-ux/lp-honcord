@@ -5,11 +5,11 @@ function doPost(e) {
     if (!raw || raw.length > 10000) return reply_(false);
     const lead = JSON.parse(raw);
     if (!validLead_(lead)) return reply_(false);
-    const sheet = SpreadsheetApp.openById('1RGl_DSra1l7aCDHaVQGjKRhv6S0qjlzvQyOv-gQabLA').getSheetByName('Leads Honcord');
-    if (!sheet) return reply_(false);
     const lock = LockService.getScriptLock();
     lock.waitLock(10000);
     try {
+      const sheet = sheetFor_(lead.lp);
+      if (!sheet) return reply_(false);
       const last = sheet.getLastRow();
       if (last > 1) {
         const start = Math.max(2, last - 199);
@@ -31,6 +31,29 @@ function doPost(e) {
     console.error('Falha ao registrar lead');
     return reply_(false);
   }
+}
+/** Cada LP grava na sua própria aba: página 1 = Oncologia, página 2 = Hematologia. */
+const SPREADSHEET_ID = '1RGl_DSra1l7aCDHaVQGjKRhv6S0qjlzvQyOv-gQabLA';
+const SHEETS_BY_LP = {
+  oncologia: {name: 'LP Oncologia', position: 1},
+  hematologista: {name: 'LP Hematologia', position: 2}
+};
+const HEADERS = ['Recebido em', 'LP', 'Nome', 'WhatsApp', 'Convênio', 'Motivo do contato', 'Página',
+  'UTM source', 'UTM medium', 'UTM campaign', 'UTM term', 'UTM content', 'GCLID', 'ID do envio'];
+function sheetFor_(lp) {
+  const target = SHEETS_BY_LP[lp];
+  if (!target) return null;
+  const book = SpreadsheetApp.openById(SPREADSHEET_ID);
+  // Garante as abas na ordem fixa, independentemente de qual LP envia o primeiro lead.
+  Object.keys(SHEETS_BY_LP).map(key => SHEETS_BY_LP[key])
+    .sort((a, b) => a.position - b.position)
+    .forEach(tab => {
+      if (book.getSheetByName(tab.name)) return;
+      const created = book.insertSheet(tab.name, Math.min(tab.position - 1, book.getSheets().length));
+      created.appendRow(HEADERS);
+      created.setFrozenRows(1);
+    });
+  return book.getSheetByName(target.name);
 }
 function reply_(success) {
   return ContentService.createTextOutput(JSON.stringify({success: success}))

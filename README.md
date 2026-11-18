@@ -23,6 +23,15 @@ O deploy no cPanel mantém `/doacao-de-sangue/` e publica `/oncologia/` no subdo
 
 O endpoint `honcord-lead.php` valida os dados e encaminha ao Apps Script vinculado à planilha privada “Honcord - Leads Hematologia e Oncologia” de `atendimento.3ads@gmail.com`. O URL do web app fica exclusivamente em `/home2/hg3ads37/.config/honcord-leads.php`, fora da pasta pública e do Git, com permissão `0600`. O deploy exige esse arquivo antes de copiar as LPs. Nenhum formulário confirma recebimento sem resposta positiva do servidor. A planilha registra LP, nome, WhatsApp, convênio, motivo e parâmetros de campanha; os testes devem usar dados sintéticos identificados como `TESTE`.
 
+## Rastreamento
+
+| LP | GTM | Botões / `CONTACT_URL` | Evento após confirmação do servidor | Aba da planilha |
+|---|---|---|---|---|
+| Oncologia | `GTM-KGZ9PH76` ([GTM] - Honcord \| Oncologia) | `https://spar.3ads.com.br/l/botao-lp-oncologia-74z` | `honcord_oncologia_form_success` | `LP Oncologia` (página 1) |
+| Hematologia | `GTM-TDGJVCQN` ([GTM] - Honcord \| Hematologia) | `https://spar.3ads.com.br/l/botao-lp-hematologia-vux` | `honcord_hematologia_form_success` | `LP Hematologia` (página 2) |
+
+Os eventos são disparados em `assets/honcord-form.js` somente depois de `honcord-lead.php` responder `success: true`; o evento genérico `generate_lead` continua sendo enviado. O Apps Script (`apps-script/Code.gs`) grava cada LP na sua aba e cria as duas abas, nessa ordem e com cabeçalho, se ainda não existirem. A aba antiga `Leads Honcord` é preservada com o histórico. Alterações no `Code.gs` só passam a valer depois de publicar uma nova versão da implantação existente do web app (Implantar → Gerenciar implantações → Editar → Nova versão), o que mantém o mesmo URL.
+
 ## Pendências de conteúdo
 
 - Os nomes dos 17 convênios foram inseridos na LP de Oncologia; os arquivos oficiais de logotipo ainda podem substituir os cards textuais quando forem disponibilizados.

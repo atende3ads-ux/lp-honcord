@@ -62,6 +62,8 @@
       status.textContent = '';
       window.dataLayer = window.dataLayer || [];
       window.dataLayer.push({event: 'generate_lead', form: 'honcord', lp: data.lp});
+      var successEvents = {oncologia: 'honcord_oncologia_form_success', hematologista: 'honcord_hematologia_form_success'};
+      if (successEvents[data.lp]) window.dataLayer.push({event: successEvents[data.lp]});
     } catch (_) {
       status.textContent = 'Não foi possível confirmar o envio. Tente novamente ou fale com a equipe pelo WhatsApp.';
     } finally {
